@@ -1,5 +1,14 @@
-name:First Workflow
-on: workflow_dispatch
+name: First Workflow
+ 
+on:
+  workflow_dispatch:
+ 
 jobs:
   first_job:
-    runs-on:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+ 
+      - name: Say hello
+        run: echo "Hello from the first job!"
